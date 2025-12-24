@@ -282,6 +282,26 @@ html {
     backdrop-filter: blur(4px);
 }
 
+/* 3D Christmas Tree (credit: jhey.dev, adapted) */
+.tree-wrapper { perspective: 1200px; transform-style: preserve-3d; }
+.tree { position: relative; height: 50vmin; width: 25vmin; transform-style: preserve-3d; animation: spin 6s infinite linear; margin: 0 auto; }
+.tree__light { transform-style: preserve-3d; position: absolute; height: 1vmin; width: 1vmin; border-radius: 50%; animation: flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4), appear 0.5s calc(var(--appear) * 0.05s) both; left: 50%; transform: translate(-50%, 50%) rotateY(calc(var(--rotate, 0) * 1deg)) translate3d(0, 0, calc(var(--radius, 0) * 1vmin)); bottom: calc(var(--y, 0) * 1%); }
+.tree__star { stroke-width: 5vmin; stroke: #f5e0a3; filter: drop-shadow(0 0 2vmin #fcf1cf); height: 5vmin; width: 5vmin; overflow: visible !important; bottom: 100%; left: 50%; transform: translate(-50%, 0); position: absolute; stroke-dasharray: 1000 1000; fill: none; animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both; }
+
+@keyframes stroke { from { stroke-dashoffset: -1000; } }
+@keyframes spin { to { transform: rotateY(360deg); } }
+@keyframes appear { from { opacity: 0; } }
+@keyframes flash { 0%, 100% { background: #be123c; } 20% { background: #fff; } 40% { background: #be123c; } 60% { background: #fff; } 80% { background: #be123c; } }
+
+/* Section theming around the tree */
+.tree-section { position: relative; }
+.tree-section .glow-light { opacity: 0.4; }
+
+/* Mobile scaling for tree */
+@media (max-width: 640px) {
+  .tree { height: 55vmin; width: 30vmin; animation-duration: 8s; }
+}
+
 /* Mobile responsiveness tweaks */
 @media (max-width: 640px) {
   body {
@@ -378,9 +398,58 @@ html {
   @keyframes heartbeat { 0% { transform: scale(1); } 25% { transform: scale(1.06); } 50% { transform: scale(1); } 75% { transform: scale(1.06); } 100% { transform: scale(1); } }
 }
 
+/* Mobile first fine-tuning */
+@media (max-width: 420px) {
+  /* Global spacing */
+  section { padding-top: 1.25rem !important; padding-bottom: 1.25rem !important; }
+  .container { padding-left: 0.875rem !important; padding-right: 0.875rem !important; }
+
+  /* Headings & text */
+  h1 { font-size: 1.5rem; line-height: 2rem; }
+  h2 { font-size: 1.35rem; line-height: 1.8rem; }
+  h3 { font-size: 1.15rem; line-height: 1.5rem; }
+  .script-font { font-size: 1.05em; }
+  p { font-size: 0.98rem; line-height: 1.55rem; }
+
+  /* Photos grid */
+  .grid { gap: 0.6rem !important; }
+  .photo-gradient { border-width: 2px !important; }
+
+  /* YouTube embed */
+  .aspect-video { height: 200px !important; }
+
+  /* Envelope: smallest phones */
+  .envelope { width: 220px; height: 154px; }
+  .letter { width: 200px; height: 130px; padding: 12px; left: 10px; bottom: 8px; }
+  .side-left { border-width: 77px 0 77px 110px; }
+  .side-right { border-width: 77px 110px 77px 0; }
+  .side-bottom { border-width: 0 110px 88px 110px; }
+  .envelope-flap { border-width: 88px 110px 0 110px; }
+  .wax-seal { top: -70px; width: 34px; height: 34px; }
+  .envelope-container.open .letter { transform: translateY(-80px); }
+
+  /* Tree: compact */
+  .tree { height: 60vmin; width: 32vmin; animation-duration: 9s; }
+
+  /* Effects: reduce intensity on tiny screens */
+  .glow-light { filter: blur(7px); opacity: 0.4; }
+  .glass-card { backdrop-filter: blur(7px); box-shadow: 0 6px 18px rgba(0,0,0,0.22); }
+}
+
+/* Small phones to phablets */
+@media (min-width: 421px) and (max-width: 640px) {
+  h2 { font-size: 1.6rem; line-height: 2rem; }
+  h3 { font-size: 1.25rem; }
+  .grid { gap: 0.8rem !important; }
+  .aspect-video { height: 240px !important; }
+  .tree { height: 56vmin; width: 30vmin; animation-duration: 8s; }
+}
+
 /* Small tablets */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 641px) and (max-width: 768px) {
   section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  h2 { font-size: 1.8rem; }
   .grid { gap: 1rem !important; }
   .aspect-video { height: 300px !important; }
+  .tree { height: 50vmin; width: 28vmin; animation-duration: 7s; }
 }
