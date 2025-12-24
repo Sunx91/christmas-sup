@@ -345,7 +345,72 @@ html {
 
   /* Reduce glow-light blur for performance on mobile */
   .glow-light { filter: blur(10px); }
+
+  /* Avoid overly tall sections on mobile */
+  .min-h-screen { min-height: auto !important; }
+  .min-h-\[80vh\] { min-height: auto !important; }
+
+  /* Global section spacing harmonized */
+  section.py-20 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  section.py-12 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+  /* Container width control */
+  .container { max-width: 100% !important; }
+
+  /* Photo cards: ensure consistent sizing */
+  .aspect-\[3\/4\] { height: auto !important; }
+  .photo-gradient { border-width: 2px; }
+  .photo-gradient img { width: 100%; height: auto; object-fit: cover; }
+
+  /* Typography clamp to prevent overflow */
+  h1, h2, h3 { word-wrap: break-word; hyphens: auto; }
+
+  /* Reduce glow overlays stacking on mobile */
+  .glow-light { opacity: 0.4; }
+
+  /* Intro overlay text spacing */
+  #intro-overlay .text-center { padding-left: 1rem; padding-right: 1rem; }
+
+  /* Ensure envelope section centers without overflow */
+  .envelope-container { width: 100%; display: flex; justify-content: center; }
 }
+
+/* Prevent long words/emojis from pushing layout */
+.script-font { overflow-wrap: anywhere; }
+
+/* Extra mobile fixes */
+@media (max-width: 640px) {
+  /* Avoid overly tall sections on mobile */
+  .min-h-screen { min-height: auto !important; }
+  .min-h-\[80vh\] { min-height: auto !important; }
+
+  /* Global section spacing harmonized */
+  section.py-20 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  section.py-12 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+  /* Container width control */
+  .container { max-width: 100% !important; }
+
+  /* Photo cards: ensure consistent sizing */
+  .aspect-\[3\/4\] { height: auto !important; }
+  .photo-gradient { border-width: 2px; }
+  .photo-gradient img { width: 100%; height: auto; object-fit: cover; }
+
+  /* Typography clamp to prevent overflow */
+  h1, h2, h3 { word-wrap: break-word; hyphens: auto; }
+
+  /* Reduce glow overlays stacking on mobile */
+  .glow-light { opacity: 0.4; }
+
+  /* Intro overlay text spacing */
+  #intro-overlay .text-center { padding-left: 1rem; padding-right: 1rem; }
+
+  /* Ensure envelope section centers without overflow */
+  .envelope-container { width: 100%; display: flex; justify-content: center; }
+}
+
+/* Prevent long words/emojis from pushing layout */
+.script-font { overflow-wrap: anywhere; }
 
 /* Stronger mobile optimization */
 @media (max-width: 480px) {
