@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Christmas Moment for Kushalee</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Canvas for Snow -->
+    <canvas id="snow-canvas"></canvas>
+
+    <!-- Scroll to Top Button (Made Larger) -->
+    <button id="scrollTopBtn" onclick="scrollToTop()" class="fixed bottom-8 right-8 z-50 p-4 bg-rose-900/80 hover:bg-rose-700 text-amber-100 rounded-full shadow-lg border border-rose-500/30 transition-all duration-500 opacity-0 translate-y-10 pointer-events-none group">
+        <i data-lucide="arrow-up" class="w-8 h-8 group-hover:-translate-y-1 transition-transform duration-300"></i>
+    </button>
+
+    <!-- SECTION 1: Sweet Beginning (Overlay) -->
+    <div id="intro-overlay" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#0f0505] transition-opacity duration-1000 ease-in-out">
+        <div class="text-center px-6">
+            <h1 class="text-4xl md:text-6xl text-amber-100 mb-6 opacity-0 animate-fade-in-up" style="animation: fadeIn 2s forwards;">
+                For you, <span class="text-rose-500">Kushalee</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light opacity-0" style="animation: fadeIn 2s forwards 1.5s;">
+                A little Christmas moment, made with love.
+            </p>
+            
+            <button onclick="startExperience()" class="mt-12 px-10 py-3 btn-royal text-white rounded-full font-medium tracking-wide transition-all duration-500 opacity-0" style="animation: fadeIn 2s forwards 3s;">
+                <i data-lucide="sparkles" class="inline w-4 h-4 mr-2"></i> Open
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content" class="opacity-0 transition-opacity duration-1000">
+        
+        <!-- SECTION 2: Magical Lights Welcome -->
+        <section class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden py-20">
+            <!-- Decorative floating lights - Added Red/Rose tones -->
+            <div class="glow-light w-32 h-32 bg-rose-600/20 top-1/4 left-1/4" style="animation-delay: 0s;"></div>
+            <div class="glow-light w-24 h-24 bg-amber-400/20 top-2/3 right-1/4" style="animation-delay: 1s;"></div>
+            <div class="glow-light w-16 h-16 bg-red-500/20 top-1/3 right-1/3" style="animation-delay: 2s;"></div>
+            <div class="glow-light w-40 h-40 bg-purple-500/10 bottom-1/4 left-1/3" style="animation-delay: 3s;"></div>
+
+            <div class="container mx-auto px-6 text-center z-10 reveal-on-scroll">
+                <div class="mb-8 flex justify-center">
+                    <div class="relative">
+                        <i data-lucide="star" class="text-amber-200 w-8 h-8 animate-pulse"></i>
+                        <div class="absolute inset-0 bg-amber-200 blur-lg opacity-40"></div>
+                    </div>
+                </div>
+                <h2 class="text-3xl md:text-5xl text-white font-light leading-relaxed">
+                    Even the smallest lights <br>
+                    know how to come together.
+                </h2>
+            </div>
+        </section>
+
+        <!-- SECTION 3: A Gentle Christmas Message -->
+        <section class="min-h-[80vh] flex items-center justify-center py-20">
+            <div class="container mx-auto px-6 max-w-2xl text-center reveal-on-scroll">
+                <div class="glass-card p-10 md:p-14 rounded-2xl relative overflow-hidden">
+                    <!-- Subtle red accent line at top -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rose-500 to-transparent opacity-50"></div>
+                    
+                    <p class="text-xl md:text-2xl mb-8 text-rose-200 script-font">Merry Christmas, Kushalee.</p>
+                    <div class="space-y-6 text-lg md:text-xl text-slate-200 font-light leading-loose">
+                        <p>I didn’t want to give you something loud or ordinary.</p>
+                        <p>I wanted to give you something <span class="text-rose-200 italic">soft</span>, warm, and real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Soft Floating Memories -->
+        <section class="min-h-screen py-20 bg-gradient-to-b from-transparent via-rose-900/10 to-transparent">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl text-amber-100 mb-4 script-font">Moments of Us</h2>
+                    <div class="w-16 h-0.5 bg-rose-500/50 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Photos Grid (Placeholders) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                    
+                    <!-- Photo 1 - Swaying Left -->
+                    <div class="reveal-on-scroll delay-100 group animate-sway" style="animation-delay: 0s;">
+                        <div class="aspect-[3/4] rounded-lg photo-gradient relative overflow-hidden shadow-2xl border-4 border-white/5 transform group-hover:scale-105 transition-transform duration-500">
+                            <!-- Placeholder Content -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-500">
+                                <i data-lucide="image" class="w-8 h-8 mb-2 opacity-50"></i>
+                                <span class="text-xs tracking-widest uppercase opacity-50">Memory One</span>
+                            </div>
+                            <img src="images/IMG_6235-min.jpeg" alt="Memory One" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 (Offset on desktop) - Swaying Right -->
+                    <div class="reveal-on-scroll delay-200 md:mt-12 group animate-sway" style="animation-direction: alternate-reverse; animation-delay: 1s;">
+                        <div class="aspect-[3/4] rounded-lg photo-gradient relative overflow-hidden shadow-2xl border-4 border-white/5 transform group-hover:scale-105 transition-transform duration-500">
+                             <!-- Placeholder Content -->
+                             <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-500">
+                                <i data-lucide="image" class="w-8 h-8 mb-2 opacity-50"></i>
+                                <span class="text-xs tracking-widest uppercase opacity-50">Memory Two</span>
+                            </div>
+                            <img src="images/IMG_6373-min.jpeg" alt="Memory Two" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 - Swaying Left -->
+                    <div class="reveal-on-scroll delay-300 group animate-sway" style="animation-delay: 2s;">
+                        <div class="aspect-[3/4] rounded-lg photo-gradient relative overflow-hidden shadow-2xl border-4 border-white/5 transform group-hover:scale-105 transition-transform duration-500">
+                             <!-- Placeholder Content -->
+                             <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-500">
+                                <i data-lucide="image" class="w-8 h-8 mb-2 opacity-50"></i>
+                                <span class="text-xs tracking-widest uppercase opacity-50">Memory Three</span>
+                            </div>
+                            <img src="images/IMG_6410-min.JPG" alt="Memory Three" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-16 reveal-on-scroll">
+                    <p class="text-lg italic text-slate-400">“These moments are simple, but they already feel special to me.”</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Three Sweet Reasons -->
+        <section class="min-h-[70vh] flex items-center justify-center py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card p-8 rounded-xl text-center reveal-on-scroll group">
+                        <div class="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-rose-500/20 transition-colors">
+                            <i data-lucide="cloud-sun" class="text-rose-300"></i>
+                        </div>
+                        <p class="text-lg text-slate-200 leading-relaxed font-light">“I love how calm you make everything feel.”</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card p-8 rounded-xl text-center reveal-on-scroll group" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-rose-500/20 transition-colors">
+                            <i data-lucide="heart-handshake" class="text-rose-300"></i>
+                        </div>
+                        <p class="text-lg text-slate-200 leading-relaxed font-light">“I love the sweet kindness in the way you care.”</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card p-8 rounded-xl text-center reveal-on-scroll group" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 bg-rose-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-rose-500/20 transition-colors">
+                            <i data-lucide="shield-check" class="text-rose-300"></i>
+                        </div>
+                        <p class="text-lg text-slate-200 leading-relaxed font-light">“I love how being with you feels easy and safe.”</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: A Tiny Hidden Surprise -->
+        <section class="py-12 flex justify-center">
+            <div class="reveal-on-scroll text-center">
+                <button onclick="revealSurprise(this)" class="group flex flex-col items-center focus:outline-none transition-all duration-500">
+                    <!-- Made Button Larger (w-24 h-24) and Icon Larger (w-10 h-10) -->
+                    <div class="w-24 h-24 bg-rose-600/20 rounded-full flex items-center justify-center border border-rose-500/40 group-hover:bg-rose-600/40 group-hover:scale-110 transition-all duration-300 animate-heartbeat">
+                        <i data-lucide="gift" class="text-rose-300 w-10 h-10"></i>
+                    </div>
+                    <span class="text-sm text-rose-300/70 mt-4 tracking-widest group-hover:text-rose-200 transition-colors">TAP ME</span>
+                </button>
+                <!-- Text pops in with normal size (larger for script font) -->
+                <div id="hidden-surprise-text" class="hidden mt-8 text-rose-100 text-3xl script-font">
+                    “This is a little reminder that you are deeply cherished.”
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: A Song That Feels Like Her -->
+        <section class="py-20 bg-black/20">
+            <div class="container mx-auto px-6 max-w-3xl text-center reveal-on-scroll">
+                <p class="text-slate-300 mb-8 sans-font tracking-wide text-sm uppercase">This song feels a little like you to me</p>
+                
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/10 group">
+                    <!-- YouTube Embed -->
+                    <iframe 
+                        class="w-full h-full" 
+                        src="https://www.youtube.com/embed/L27JBpy-PpE?controls=1&rel=0&showinfo=0&modestbranding=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: The Final Surprise Scene -->
+        <section class="min-h-screen flex flex-col items-center justify-center py-20 relative">
+            <div class="glow-light w-64 h-64 bg-rose-600/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="text-center mb-16 reveal-on-scroll z-10 relative">
+                <h3 class="text-2xl text-white script-font mb-2">One last little thing, just for you.</h3>
+                <p class="text-sm text-slate-400">Tap the wax seal to open</p>
+            </div>
+
+            <div class="reveal-on-scroll z-20">
+                <div class="envelope-container" onclick="this.classList.toggle('open')">
+                    <div class="envelope">
+                        
+                        <!-- Letter Inside -->
+                        <div class="letter">
+                            <p class="script-font text-2xl text-rose-800 mb-4">My Christmas Wish</p>
+                            <p class="text-slate-700 text-sm leading-relaxed mb-4 font-medium">
+                                That you always feel loved.<br>
+                                That you feel warm and safe.<br>
+                                And that everything ahead feels gentle and kind.
+                            </p>
+                            <div class="text-rose-500 animate-pulse mt-2">
+                                <i data-lucide="heart" class="w-5 h-5 inline fill-current"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Envelope Structure -->
+                        <div class="envelope-side side-left"></div>
+                        <div class="envelope-side side-right"></div>
+                        <div class="envelope-side side-bottom"></div>
+                        
+                        <!-- Flap with Seal -->
+                        <div class="envelope-flap">
+                            <div class="wax-seal">
+                                <i data-lucide="heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: A Warm Goodbye -->
+        <section class="py-20 text-center relative z-10">
+            <div class="reveal-on-scroll space-y-8">
+                <h2 class="text-4xl md:text-5xl text-rose-100 script-font">Finally, Merry Christmas for you.</h2>
+                <div class="text-slate-300 font-light text-lg">
+                    <p>May this season bring you warmth, joy,</p>
+                    <p>and moments that make you smile softly.</p>
+                </div>
+                <p class="text-slate-400 text-sm tracking-widest uppercase mt-8">This is only the beginning of our story.</p>
+                
+                <div class="pt-16 pb-8">
+                    <p class="text-rose-200/60 script-font text-2xl">— Sunaaa</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
